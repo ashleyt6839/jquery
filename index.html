@@ -1,14 +1,57 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <meta charset="UTF-8">
-    <title>title</title>
+
+<head>
+  <meta charset="UTF-8">
+  <title>title</title>
+  <script src="//code.jquery.com/jquery-1.12.0.min.js"></script>
+  <script>
+    $(function() {
+      $('button').click(function() {
+        var cityURL = $('input[name="city"]:checked').val();
+        // alert(cityURL);
+        var userFirst = $('#firstName').val();
+        var userLast = $('#lastName').val();
+        // alert(userFirst);
+        // alert(userLast);
+        //change HTML
+        $('h1').html(userFirst + userLast);
+        //change CSS
+        $("#banner").css('background-image', 'url(' + cityURL + ')');
+      });
+
+    });
+  </script>
   <style type="text/css">
-   
+    #banner {
+      height: 900px;
+      width: 1000px;
+    }
   </style>
-  </head>
-  <body>
-  
-  <script src="//ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js" type="text/javascript"></script>
-  </body>
+</head>
+
+<body>
+  <div id="info">
+    <span class="label">First Name:</span>
+    <input type="text" id="firstName" placeholder="First Name" required>
+    <br>
+    <br>
+    <span class="label">Last Name: </span>
+    <input type="text" id="lastName" placeholder="Last Name" required>
+    <br>
+    <br>
+
+    <span class="label">City:</span>
+    <input type="radio" name="city" value="nyc.jpg"> New York
+    <input type="radio" name="city" value="chicago.jpg"> Chicago
+    <input type="radio" name="city" value="washington.jpg"> Washington D.C
+    <br>
+    <br>
+    <button>Create My Banner!</button>
+  </div>
+  <div id="banner">
+    <h1></h1>
+  </div>
+</body>
+
 </html>
