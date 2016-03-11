@@ -7,6 +7,7 @@
   <script src="//code.jquery.com/jquery-1.12.0.min.js"></script>
   <script>
     $(function() {
+      // once button is pressed & one of the radios are checked garb the value of it 
       $('button').click(function() {
         var cityURL = $('input[name="city"]:checked').val();
         // alert(cityURL);
@@ -14,9 +15,9 @@
         var userLast = $('#lastName').val();
         // alert(userFirst);
         // alert(userLast);
-        //change HTML
+        //change HTML, displays as an h1 with the users first name and last
         $('h1').html(userFirst + userLast);
-        //change CSS
+        //change CSS to backgroung image that the user decides based on their option 
         $("#banner").css('background-image', 'url(' + cityURL + ')');
       });
 
